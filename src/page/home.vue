@@ -1,5 +1,5 @@
 <template>
-  <fm-making-form ref="makingForm" upload preview generate-code generate-json clearable>
+  <fm-making-form upload preview generate-code generate-json clearable>
     <template slot="action">
     </template>
   </fm-making-form>
@@ -8,6 +8,7 @@
 <script>
 export default {
   mounted () {
+    console.log(777)
   }
 }
 </script>

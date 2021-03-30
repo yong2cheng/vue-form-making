@@ -13,9 +13,6 @@
     <img src="https://img.shields.io/npm/dt/form-making" alt="downloads">
   </a>
   
-  <a href="https://github.com/GavinZhuLei/vue-form-making/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/GavinZhulei/vue-form-making" alt="license">
-  </a>
 </p>
 
 简体中文 | [English](./README.md)
@@ -74,7 +71,7 @@ Modern browsers and Internet Explorer 10+.
 
 [LGPL-3.0](https://opensource.org/licenses/LGPL-3.0)
 
-您可以将 vue-form-making 源码用于 LGPL 协议的开源项目中，并保留版权信息（Powered by <a target="_blank" href="https://github.com/GavinZhuLei/vue-form-making">vue-form-making</a>）。
+您可以将 vue-form-making 源码用于 LGPL 协议的开源项目中，并保留版权信息（Powered by <a target="_blank" href="">vue-form-making</a>）。
 
 ## 商业许可
 

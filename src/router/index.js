@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from '../demo/Home.vue'
-import LanguageView from './LanguageView.vue'
+import home from '@/page/home.vue'
+import LanguageView from '@/components/LanguageView.vue'
 
 Vue.use(Router)
 
@@ -22,7 +22,7 @@ export default new Router({
         {
           path: '',
           name: 'index',
-          component: Home
+          component: home
         }
       ]
     }

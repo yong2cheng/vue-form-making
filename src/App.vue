@@ -3,18 +3,8 @@
     <div class="fm-header">
       <img class="fm-logo" src="./assets/logo.png">
       <div class="fm-title" @click="handleHome">{{$t('header.title')}}</div>
-
-      <iframe style="vertical-align: middle;margin-top:10px;margin-left: 10px;" src="https://ghbtns.com/github-btn.html?user=GavinZhulei&repo=vue-form-making&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-
       <div class="fm-link">
-
-        <a target="_blank" href="http://form.xiaoyaoji.cn/pricing">{{$t('header.pricing')}}</a>
-        <a target="_blank" href="https://gitee.com/gavinzhulei/vue-form-making/blob/master/README.zh-CN.md" v-if="$lang == 'zh-CN'">{{$t('header.document')}}</a>
-        <a target="_blank" href="https://github.com/GavinZhuLei/vue-form-making/blob/master/README.md" v-if="$lang == 'en-US'">{{$t('header.document')}}</a>
-        
-        <a target="_blank" href="https://gitee.com/gavinzhulei/vue-form-making" v-if="$lang == 'zh-CN'">Gitee</a> 
-        <a target="_blank" href="https://github.com/GavinZhuLei/vue-form-making">GitHub</a>
-
+        <a target="_blank" href="#"></a>
         <div class="action-item">
           <el-dropdown trigger="click" @command="handleLangCommand">
             <span class="el-dropdown-link">
@@ -26,9 +16,7 @@
             </el-dropdown-menu>
           </el-dropdown>
         </div>
-
-        <a class="ad" href="http://form.xiaoyaoji.cn" target="_blank">{{$t('header.advanced')}}</a>
-        <a class="ad" href="http://www.xiaoyaoji.cn" target="_blank" v-if="$lang == 'zh-CN'">小幺鸡接口工具</a>
+        <a class="ad" href="#" target="_blank" v-if="$lang == 'zh-CN'"></a>
       </div>
     </div>
     <div  class="fm-container"><router-view/></div>
@@ -55,9 +43,9 @@ export default {
 <style lang="scss">
 .fm-header{
   height: 50px;
-  box-shadow: 0 2px 10px rgba(70,160,252, 0.6);
+  box-shadow: 0 2px 10px rgba(81,133,173, 0.6);
   padding: 0 10px;
-  background-image: linear-gradient(to right,#1278f6,#00b4aa);
+  background-image: linear-gradient(to right,#3F51B5,#03A9F4);
   position: relative;
 
   .fm-logo{

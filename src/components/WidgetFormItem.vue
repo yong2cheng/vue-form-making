@@ -154,6 +154,7 @@
             :height="element.options.size.height"
             token="xxx"
             domain="xxx"
+            :action="element.options.action"
           >
             
           </fm-upload>
@@ -203,7 +204,24 @@
 <script>
 import FmUpload from './Upload'
 export default {
-  props: ['element', 'select', 'index', 'data'],
+  props: {
+    element: {
+      type: Object,
+      default: () => {}
+    },
+    data: {
+      type: Object,
+      default: () => {}
+    },
+    select: {
+      type: Object,
+      default: () => {}
+    },
+    index: {
+      type: Number,
+      default: () => 0
+    }
+  },
   components: {
     FmUpload,
   },

@@ -1,13 +1,11 @@
 # 二次开发
 
-二次开发用于商业用途需要购买商业授权，具体详情请查看 [商业授权说明](http://form.making.link/pricing)
-
 > 二次开发需要 vue 的基础，如果还不了解 vue 请查看 [https://cn.vuejs.org/v2/guide/](https://cn.vuejs.org/v2/guide/)
 
 ## 获取代码
 
 ```bash
-git clone https://github.com/GavinZhuLei/vue-form-making.git
+git clone https://github.com/yong2cheng/vue-form-making.git
 ``` 
 
 ## 安装项目依赖包

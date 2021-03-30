@@ -7,7 +7,7 @@
 ## Get Source Code
 
 ```bash
-git clone https://github.com/GavinZhuLei/vue-form-making.git
+git clone https://github.com/yong2cheng/vue-form-making.git
 ``` 
 
 ## Install Dependencies

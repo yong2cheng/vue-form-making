@@ -16,18 +16,12 @@ Vue.use(VueEditor)
 const messages = {
   'en-US': {
     header: {
-      title: 'FormMaking',
-      document: 'Docs',
-      pricing: 'Pricing',
-      advanced: 'Advanced',
+      title: 'FormMaking'
     }
   },
   'zh-CN': {
     header: {
-      title: '表单设计器',
-      document: '使用文档',
-      pricing: '商业授权',
-      advanced: '高级版本',
+      title: '表单设计器'
     }
   }
 }

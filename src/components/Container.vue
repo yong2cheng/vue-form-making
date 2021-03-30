@@ -3,8 +3,10 @@
     <el-container class="fm2-container">
       <el-main class="fm2-main">
         <el-container>
+          <!-- 左边字段元素选择 -->
           <el-aside width="250px">
             <div class="components-list">
+              <!-- 基础字段 -->
               <template v-if="basicFields.length">
                 <div class="widget-cate">{{$t('fm.components.basic.title')}}</div>
                 <draggable tag="ul" :list="basicComponents" 
@@ -13,16 +15,17 @@
                   @start="handleMoveStart"
                   :move="handleMove"
                 >
-                  
-                  <li v-if="basicFields.indexOf(item.type)>=0" class="form-edit-widget-label" :class="{'no-put': item.type == 'divider'}" v-for="(item, index) in basicComponents" :key="index">
-                    <a>
-                      <i class="icon iconfont" :class="item.icon"></i>
-                      <span>{{item.name}}</span>
-                    </a>
-                  </li>
+                  <template v-for="(item, index) in basicComponents"> 
+                    <li v-if="basicFields.indexOf(item.type)>=0" class="form-edit-widget-label" :class="{'no-put': item.type == 'divider'}" :key="index">
+                      <a>
+                        <i class="icon iconfont" :class="item.icon"></i>
+                        <span>{{item.name}}</span>
+                      </a>
+                    </li>
+                  </template>
                 </draggable>
               </template>
-              
+              <!-- 高级字段 -->
               <template v-if="advanceFields.length">
                 <div class="widget-cate">{{$t('fm.components.advance.title')}}</div>
                 <draggable tag="ul" :list="advanceComponents" 
@@ -31,17 +34,17 @@
                   @start="handleMoveStart"
                   :move="handleMove"
                 >
-                  
-                  <li v-if="advanceFields.indexOf(item.type) >= 0" class="form-edit-widget-label" :class="{'no-put': item.type == 'table'}" v-for="(item, index) in advanceComponents" :key="index">
-                    <a>
-                      <i class="icon iconfont" :class="item.icon"></i>
-                      <span>{{item.name}}</span>
-                    </a>
-                  </li>
+                  <template v-for="(item, index) in advanceComponents"> 
+                    <li v-if="advanceFields.indexOf(item.type) >= 0" class="form-edit-widget-label" :class="{'no-put': item.type == 'table'}" :key="index">
+                      <a>
+                        <i class="icon iconfont" :class="item.icon"></i>
+                        <span>{{item.name}}</span>
+                      </a>
+                    </li>
+                  </template>
                 </draggable>
               </template>
-
-              
+              <!-- 布局字段 -->
               <template v-if="layoutFields.length">
                 <div class="widget-cate">{{$t('fm.components.layout.title')}}</div>
                 <draggable tag="ul" :list="layoutComponents" 
@@ -50,19 +53,19 @@
                   @start="handleMoveStart"
                   :move="handleMove"
                 >
-                  
-                  <li v-if="layoutFields.indexOf(item.type) >=0" class="form-edit-widget-label no-put" v-for="(item, index) in layoutComponents" :key="index">
-                    <a>
-                      <i class="icon iconfont" :class="item.icon"></i>
-                      <span>{{item.name}}</span>
-                    </a>
-                  </li>
+                  <template v-for="(item, index) in layoutComponents">
+                    <li v-if="layoutFields.indexOf(item.type) >=0" class="form-edit-widget-label no-put" :key="index">
+                      <a>
+                        <i class="icon iconfont" :class="item.icon"></i>
+                        <span>{{item.name}}</span>
+                      </a>
+                    </li>
+                  </template>
                 </draggable>
               </template>
-              
             </div>
-            
           </el-aside>
+          <!-- 中间字段元素选择展示 -->
           <el-container class="center-container" direction="vertical">
             <el-header class="btn-bar" style="height: 45px;">
               <slot name="action">
@@ -78,7 +81,7 @@
               <widget-form v-if="!resetJson"  ref="widgetForm" :data="widgetForm" :select.sync="widgetFormSelect"></widget-form>
             </el-main>
           </el-container>
-          
+          <!-- 右边属性设置 -->
           <el-aside class="widget-config-container">
             <el-container>
               <el-header height="45px">
@@ -86,13 +89,13 @@
                 <div class="config-tab" :class="{active: configTab=='form'}" @click="handleConfigSelect('form')">{{$t('fm.config.form.title')}}</div>
               </el-header>
               <el-main class="config-content">
+                <!-- 字段元素属性设置 -->
                 <widget-config v-show="configTab=='widget'" :data="widgetFormSelect"></widget-config>
+                <!-- 表单属性设置 -->
                 <form-config v-show="configTab=='form'" :data="widgetForm.config"></form-config>
               </el-main>
             </el-container>
-            
           </el-aside>
-
           <cus-dialog
             :visible="previewVisible"
             @on-close="previewVisible = false"
@@ -149,7 +152,6 @@
             form
             :action="false"
           >
-            <!-- <div id="codeeditor" style="height: 500px; width: 100%;">{{htmlTemplate}}</div> -->
             <el-tabs type="border-card" style="box-shadow: none;" v-model="codeActiveName">
               <el-tab-pane label="Vue Component" name="vue">
                 <div id="vuecodeeditor" style="height: 500px; width: 100%;">{{vueTemplate}}</div>
@@ -161,7 +163,6 @@
           </cus-dialog>
         </el-container>
       </el-main>
-      <el-footer height="30px" style="font-weight: 600;">Powered by <a target="_blank" href="https://github.com/GavinZhuLei/vue-form-making">vue-form-making</a></el-footer>
     </el-container>
   </span>
 </template>
@@ -238,7 +239,7 @@ export default {
         },
       },
       configTab: 'widget',
-      widgetFormSelect: null,
+      widgetFormSelect: {},
       previewVisible: false,
       jsonVisible: false,
       codeVisible: false,
@@ -307,9 +308,6 @@ export default {
         }
       })
     },
-    handleGoGithub () {
-      window.location.href = 'https://github.com/GavinZhuLei/vue-form-making'
-    },
     handleConfigSelect (value) {
       this.configTab = value
     },
@@ -356,7 +354,6 @@ export default {
       })
     },
     handleGenerateCode () {
-
       this.codeVisible = true
       this.htmlTemplate = generateCode(JSON.stringify(this.widgetForm), 'html')
       this.vueTemplate = generateCode(JSON.stringify(this.widgetForm), 'vue')

@@ -11,9 +11,9 @@
     "element-ui",
     "auto"
   ],
-  "repository": { 
+  "repository": {
     "type": "git",
-    "url": "https://github.com/GavinZhuLei/vue-form-making"
+    "url": "https://github.com/"
   },
   "main": "dist/FormMaking.common.js",
   "scripts": {
